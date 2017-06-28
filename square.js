@@ -3,7 +3,7 @@ var squareNumber = document.querySelector('#number3');
 var result2 = document.querySelector('.result2');
 
 if (!!window.SharedWorker) {
-  var myWorker = new SharedWorker("worker.js");
+  var myWorker = new SharedWorker("worker.js", "shared");
 
   squareNumber.onchange = function() {
     myWorker.port.postMessage([squareNumber.value, squareNumber.value]);
